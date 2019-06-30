@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { BusinessOwnerService } from 'src/app/Service/BusinessOwner/business-owner.service';
+import { BusinessOwner } from 'src/app/model/business-owner';
 
 @Component({
   selector: 'app-update',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpdateComponent implements OnInit {
 
-  constructor() { }
+  businessOwner:BusinessOwner=new BusinessOwner();
+  constructor(private router:Router, private service:BusinessOwnerService) { }
 
   ngOnInit() {
+    this.Update();
   }
 
+  Update()
+  {
+    let id=localStorage.getItem("id");
+    this.service.getBusinessOwnerId(+id)
+    .subscribe(data=>{
+      this.businessOwner=data;
+    });
+  }
 }

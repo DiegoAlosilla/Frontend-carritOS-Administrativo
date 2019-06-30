@@ -21,5 +21,9 @@ export class ListComponent implements OnInit {
       this.businessOwners=data;
     })
   }
+  Update(businnessOwner:BusinessOwner):void{
+    localStorage.setItem("id",businnessOwner.id.toString());
+    this.router.navigate(["updateBusinessOwner"])
+  }
 
 }

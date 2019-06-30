@@ -13,16 +13,16 @@ export class BusinessOwnerService {
 
   constructor(private http:HttpClient) { }
 
-  getBusinessOwner(id:number):Observable<Object>{
-    return this.http.get(`${this.baseUrl}/${id}`);
+  getBusinessOwnerId(id:number){
+    return this.http.get<BusinessOwner>(`${this.baseUrl}/${id}`);
   }
 
-  postBusinessOwner(bussineOwner:Object):Observable<Object>{
-    return this.http.post(`${this.baseUrl}`,bussineOwner);
+  postBusinessOwner(bussineOwner:BusinessOwner):Observable<Object>{
+    return this.http.post<BusinessOwner>(`${this.baseUrl}`,bussineOwner);
   }
 
-  putBusinessOwner(id:number,value:any):Observable<Object>{
-    return this.http.put(`${this.baseUrl}/${id}`,value);
+  putBusinessOwner(bussineOwner:BusinessOwner){
+    return this.http.put<BusinessOwner>(this.baseUrl+"/"+bussineOwner.id,bussineOwner);
   }
   deleteBusinessOwner(id:number):Observable<Object>{
     return this.http.delete(`${this.baseUrl}/${id}`,{responseType:'text'});

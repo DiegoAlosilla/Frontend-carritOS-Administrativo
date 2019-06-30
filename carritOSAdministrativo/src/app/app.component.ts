@@ -13,4 +13,7 @@ export class AppComponent {
   ListBusinessOwner(){
     this.router.navigate(["listBusinessOwner"]);
   }
+  RegisterBusinessOwner(){
+    this.router.navigate(["registerBusinessOwner"]);
+  }
 }
