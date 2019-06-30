@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BusinessOwnerService } from 'src/app/Service/BusinessOwner/business-owner.service';
-import { BusinessOwner } from 'src/app/model/business-owner';
+import { BuisnessOwnerService } from 'src/app/Service/BuisnessOwner/buisness-owner.service';
+import { BuisnessOwner } from 'src/app/model/buisness-owner';
 
 @Component({
   selector: 'app-update',
@@ -10,19 +10,28 @@ import { BusinessOwner } from 'src/app/model/business-owner';
 })
 export class UpdateComponent implements OnInit {
 
-  businessOwner:BusinessOwner=new BusinessOwner();
-  constructor(private router:Router, private service:BusinessOwnerService) { }
+  buisnessOwner:BuisnessOwner=new BuisnessOwner();
+  constructor(private router:Router, private service:BuisnessOwnerService) { }
 
   ngOnInit() {
-    this.Update();
+    this.Get();
   }
 
-  Update()
+  Get()
   {
     let id=localStorage.getItem("id");
-    this.service.getBusinessOwnerId(+id)
+    this.service.getBuisnessOwnerId(+id)
     .subscribe(data=>{
-      this.businessOwner=data;
+      this.buisnessOwner=data;
     });
+  }
+
+  Update(buisnessOwner:BuisnessOwner){
+    this.service.putBuisnessOwner(buisnessOwner)
+    .subscribe(data=>{
+      this.buisnessOwner=data;
+      alert("update successfully");
+      this.router.navigate(["listBuisnessOwner"]);
+    })
   }
 }

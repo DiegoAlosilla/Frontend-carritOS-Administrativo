@@ -4,11 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {BuisnessOwnerService} from './Service/BuisnessOwner/buisness-owner.service'
 import { ListComponent } from './BusinessOwner/list/list.component';
 import { RegisterComponent } from './BusinessOwner/register/register.component';
 import { DeleteComponent } from './BusinessOwner/delete/delete.component';
-import { UpdateComponent } from './BusinessOwner/update/update.component'
-import {BusinessOwnerService} from '../app/Service/BusinessOwner/business-owner.service'
+import { UpdateComponent } from './BusinessOwner/update/update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,7 @@ import {BusinessOwnerService} from '../app/Service/BusinessOwner/business-owner.
     FormsModule,
     HttpClientModule
   ],
-  providers: [BusinessOwnerService],
+  providers: [BuisnessOwnerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

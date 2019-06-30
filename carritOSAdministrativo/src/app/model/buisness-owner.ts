@@ -1,4 +1,4 @@
-export class BusinessOwner {
+export class BuisnessOwner {
     id:number;
     email:string;
     username:string;
@@ -6,6 +6,6 @@ export class BusinessOwner {
     name:string;
     lastName:string;
     dni:string;
-    businessName:string;
+    buisnessName:string;
     rating:number;
 }

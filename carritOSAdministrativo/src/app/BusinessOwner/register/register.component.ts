@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BusinessOwnerService } from 'src/app/Service/BusinessOwner/business-owner.service';
-import { BusinessOwner } from 'src/app/model/business-owner';
+import { BuisnessOwnerService } from 'src/app/Service/BuisnessOwner/buisness-owner.service';
+import { BuisnessOwner } from 'src/app/model/buisness-owner';
 
 @Component({
   selector: 'app-register',
@@ -10,17 +10,20 @@ import { BusinessOwner } from 'src/app/model/business-owner';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private router:Router, private service:BusinessOwnerService) { }
+  buisnessOwner:BuisnessOwner=new BuisnessOwner();
+  constructor(private router:Router, private service:BuisnessOwnerService) { }
 
   ngOnInit() {
   }
 
-  Register(businessOwner:BusinessOwner)
+  save()
   {
-    this.service.postBusinessOwner(businessOwner)
-    .subscribe(data=>{
-      alert("Register successfully");
-      this.router.navigate(["listBusinessOwner"])
-    })
+    this.service.postBuisnessOwner(this.buisnessOwner)
+    .subscribe(data=>console.log(data),error=>console.log(error));
+    this.buisnessOwner=new BuisnessOwner();
+  }
+  onSumit()
+  {
+    this.save();
   }
 }

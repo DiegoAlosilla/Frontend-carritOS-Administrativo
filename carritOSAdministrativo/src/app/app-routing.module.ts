@@ -6,9 +6,9 @@ import { UpdateComponent } from './BusinessOwner/update/update.component';
 
 
 const routes: Routes = [
-  {path: 'listBusinessOwner',component:ListComponent},
-  {path: 'registerBusinessOwner',component:RegisterComponent},
-  {path: 'updateBusinessOwner',component:UpdateComponent},
+  {path: 'listBuisnessOwner',component:ListComponent},
+  {path: 'registerBuisnessOwner',component:RegisterComponent},
+  {path: 'updateBuisnessOwner',component:UpdateComponent},
 ];
 
 @NgModule({

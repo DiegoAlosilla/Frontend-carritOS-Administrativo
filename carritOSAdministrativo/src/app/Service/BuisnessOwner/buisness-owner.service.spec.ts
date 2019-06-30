@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BusinessOwnerService } from './business-owner.service';
+import { BuisnessOwnerService } from './buisness-owner.service';
 
-describe('BusinessOwnerService', () => {
+describe('BuisnessOwnerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: BusinessOwnerService = TestBed.get(BusinessOwnerService);
+    const service: BuisnessOwnerService = TestBed.get(BuisnessOwnerService);
     expect(service).toBeTruthy();
   });
 });

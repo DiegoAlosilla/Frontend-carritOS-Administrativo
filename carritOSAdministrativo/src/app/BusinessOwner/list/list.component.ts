@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
-import {BusinessOwnerService}from '../../Service/BusinessOwner/business-owner.service'
-import { BusinessOwner } from 'src/app/model/business-owner';
+import {BuisnessOwnerService}from '../../Service/BuisnessOwner/buisness-owner.service'
+import { BuisnessOwner } from 'src/app/model/buisness-owner';
 
 
 @Component({
@@ -11,19 +11,19 @@ import { BusinessOwner } from 'src/app/model/business-owner';
 })
 export class ListComponent implements OnInit {
 
-  businessOwners: BusinessOwner[];
+  buisnessOwners: BuisnessOwner[];
 
-  constructor(private service:BusinessOwnerService,private router:Router) { }
+  constructor(private service:BuisnessOwnerService,private router:Router) { }
 
   ngOnInit() {
-    this.service.getAllBusinessOwner()
+    this.service.getAllBuisnessOwner()
     .subscribe(data=>{
-      this.businessOwners=data;
+      this.buisnessOwners=data;
     })
   }
-  Update(businnessOwner:BusinessOwner):void{
-    localStorage.setItem("id",businnessOwner.id.toString());
-    this.router.navigate(["updateBusinessOwner"])
+  Update(buisnnessOwner:BuisnessOwner):void{
+    localStorage.setItem("id",buisnnessOwner.id.toString());
+    this.router.navigate(["updateBuisnessOwner"]);
   }
 
 }

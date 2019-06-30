@@ -10,10 +10,10 @@ export class AppComponent {
   title = 'carritOSAdministrativo';
 
   constructor(private router:Router){}
-  ListBusinessOwner(){
-    this.router.navigate(["listBusinessOwner"]);
+  ListBuisnessOwner(){
+    this.router.navigate(["listBuisnessOwner"]);
   }
-  RegisterBusinessOwner(){
-    this.router.navigate(["registerBusinessOwner"]);
+  RegisterBuisnessOwner(){
+    this.router.navigate(["registerBuisnessOwner"]);
   }
 }
